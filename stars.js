@@ -36,5 +36,7 @@ const update = () => {
     requestAnimationFrame(update);
 }
 
-setInterval(spawnStar, 200);
+setInterval(() => {
+    if (window.innerWidth > 768) {spawnStar()}
+}, 200);
 update();
