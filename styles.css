@@ -1,0 +1,436 @@
+.cloud {
+    width: 60vh;
+    height: 60vh;
+    position: absolute;
+    background: radial-gradient(circle, white 40%, transparent 50%);
+    animation: resizeWidth 3s ease-in-out infinite alternate;
+    overflow: hidden;
+}
+
+.big-cloud {
+    width: 75vh;
+    height: 75vh;
+}
+
+.cloud:nth-child(1) { top: -20vh; left: 90vw}
+.cloud:nth-child(2) { top: -25vh; left: 10vw}
+.cloud:nth-child(3) { top: -20vh; left: -5vw}
+.cloud:nth-child(4) { top: -45vh; left: 10vw}
+.cloud:nth-child(5) { top: -23vh; left: 80vw}
+.cloud:nth-child(6) { top: -39vh; left: 25vw}
+.cloud:nth-child(7) { top: -45vh; left: 35vw}
+.cloud:nth-child(8) { top: -45vh; left: 50vw}
+.cloud:nth-child(9) { top: -29vh; left: 70vw}
+.cloud:nth-child(10) { top: -23vh; left: 80vw}
+.cloud:nth-child(11) { top: -23vh; right: 85vw}
+.cloud:nth-child(12) { top: -23vh; left: 80vw}
+.cloud:nth-child(13) { top: 33vh; right: 91vw}
+.cloud:nth-child(14) { top: -33vh; left: -45vh}
+
+.star-image {
+    position: absolute;
+    width: 10vh;
+    left: 5vw;
+}
+
+.star-image:first-of-type { top: 15vh; left: 90vw}
+
+@keyframes resizeWidth {
+    0% {
+        margin-left: 5px;
+    }
+    50% {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    100% {
+        margin-top: 0px;
+        margin-right: 5px;
+    }
+}
+
+.star-container {
+    height: 100px;
+}
+
+.star {
+    position: absolute;
+    background: radial-gradient(circle, white 0%, transparent 50%);
+}
+
+main {
+    background: linear-gradient(var(--background-color1), var(--background-color2));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+main * {
+    color: white;
+}
+
+main h1, main h2, main h3 {
+    text-shadow: 0 0 5px white;
+    text-align: center;
+    animation: text-glow 1.5s ease-in-out infinite alternate;
+}
+
+#rnd-fact-text {
+    font-size: 1.9em;
+    width: 70%;
+}
+
+@keyframes text-glow {
+    0% {
+        text-shadow: 0 0 5px white;
+    } 
+    100% {
+        text-shadow: 0 0 10px white;
+    }
+}
+
+main h1 {
+    font-size: 5em;
+}
+
+main h2 {
+    font-size: 2em;
+}
+
+main h3 {
+    font-size: 1.5em;
+    position: relative;
+    top: 10vh;
+    margin: 0px 0;
+}
+
+.star {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#info {
+    background: linear-gradient(var(--background-color2), var(--background-color3));
+    width: 100vw;
+}
+
+#info h1, #info h2, #info p {
+    text-shadow: 0 0 5px white;
+}
+
+#info span {
+    text-shadow: none;
+    font-family: "Bahnschrift SemiBold", sans-serif;
+}
+
+#info h1 {
+    font-size: 5em;
+    display: inline-block;
+    width: auto;
+    margin-top: 20vh;
+    margin-left: 5vw;
+    padding: 30px;
+}
+
+#info h2 {
+    position: relative;
+    box-shadow: var(--background-color2) 3px 5px 10px;
+    text-align: right;
+    top: 0px;
+    left: 600px;
+    background: linear-gradient(-10deg, var(--background-color3lowopc), rgba(202, 10, 55, .3));
+    background-size: 150% 150%;
+    background-position: 0% 0%;
+    transform: rotate3d(1, -0.5, 0, 35deg);
+    border-radius: 10px;
+    font-size: 1.5em;
+    display: inline-block;
+    width: auto;
+    color: var(--font-color2);
+    padding: 5px;
+    margin-left: 10vw;
+    animation: backgroundEffect 1s ease-in-out infinite alternate;
+}
+
+
+#info p, #info p span {
+    padding: 20px;
+    font-size: 2em;
+    display: block;
+    width: 85%;
+    margin-left: 7vw;
+}
+
+#info p span {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    color: var(--background-color2);
+    margin: 0;
+    margin-top: 15px;
+    text-align: right;
+    border-radius: 5px;
+}
+
+#info p, #info h1 {
+    border-radius: 20px;
+    transform: rotate3d(1, -0.5, 0, 35deg);
+    background: linear-gradient(-10deg, var(--background-color3lowopc), rgba(202, 10, 55, .3));
+    background-size: 150% 150%;
+    box-shadow: var(--background-color2) 6px 10px 10px;
+    color: var(--font-color2);;
+    animation: background-effect 2s ease-in-out infinite alternate;
+}
+
+@keyframes background-effect {
+    0% {
+        background-position: 0% 0%;
+        transform: rotate3d(1, -0.5, 0, 35deg);
+    }
+    100% {
+        background-position: 100% 100%;
+        transform: rotate3d(1, -0.45, 0, 35deg);
+    }
+}
+
+.horizontal-flex {
+    display: flex;
+}
+
+#info2 {
+    background: linear-gradient(var(--background-color3), var(--background-color4));
+    width: 100vw;
+    padding: 10vh 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab {
+    background-size: 150% 150%;
+    background-position: 0% 0%;
+
+    text-shadow: 0 0 5px white;
+    color: white;
+    background: linear-gradient(10deg, var(--background-color4), var(--background-color5));
+    padding: 30px;
+    width: 80vw;
+    box-shadow: var(--background-color5) 6px 10px 10px;
+}
+
+.info2-left-part-width {
+    width: 80%;
+}
+
+.tab-a {
+    width: 20%;
+    max-height: 20vh;
+    font-size: 3em;
+    margin: auto 0;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+
+    border: none;
+    box-shadow: 0 0 10px white;
+}
+
+.tab-a:hover {
+    background-color: var(--background-color1lowopc);
+    box-shadow: 0 0 10px var(--background-color1lowopc);
+    cursor: pointer;
+}
+
+.tab:nth-child(1) {
+    animation: tab-effect 3s ease-in-out infinite alternate;
+}
+.tab:nth-child(2) {
+    animation: tab-effect2 3s ease-in-out infinite alternate;
+}
+
+@keyframes tab-effect {
+    0% {
+        background-position: 0% 0%;
+        transform: rotate3d(.7, -0.3, .1, 35deg);
+    }
+    100% {
+        background-position: 100% 100%;
+        transform: rotate3d(1, -0.35, .1, 35deg);
+    }
+}
+
+@keyframes tab-effect2 {
+    0% {
+        background-position: 0% 0%;
+        transform: rotate3d(.7, 0.3, -.1, 35deg);
+    }
+    100% {
+        background-position: 100% 100%;
+        transform: rotate3d(.7, 0.35, -.1, 35deg);
+    }
+}
+
+.tab h1 {
+    font-size: 5em;
+    margin-bottom: 20px;
+}
+
+.tab p {
+    font-size: 2em;
+}
+
+#page-bottom {
+    background: linear-gradient(var(--background-color4), var(--background-color5));
+    padding-top: 25vh;
+    width: 100vw;
+}
+
+#page-bottom-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#page-bottom h1, #page-bottom h2 {
+    text-align: center;
+}
+
+#page-bottom h1 {
+    font-size: 4em;
+}
+
+#page-bottom h2 {
+    font-size: 2em;
+    opacity: 0.4;
+}
+
+#social-media-container {
+    display: flex;
+    margin: 0 30%;
+    margin-top: 30px;
+}
+
+.social-media {
+    font-size: 1.6em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+
+    color: black;
+    text-decoration: none;
+}
+
+#coffee {
+    color: gold;
+    text-shadow: 0 0 25px yellow;
+    animation: coffee-color-change 2s ease infinite alternate;
+}
+
+@keyframes coffee-color-change {
+    0% {
+        color: gold;
+        text-shadow: 0 0 25px yellow;
+    } 100% {
+        color: orange;
+        text-shadow: 0 0 15px orangered;
+    }
+}
+
+/*
+.social-media:hover {
+    color: white;
+}*/
+
+#discord {
+    transition: color 0.3s ease;
+}
+
+#discord:hover {
+    color: #7289da;
+} 
+
+#youtube {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+#youtube:hover {
+    background-color: #ff0000;
+    color: white;
+}
+
+#footer-image {
+    width: 100%;
+    position: relative;
+    bottom: -1.2vh;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    height: 60px;
+    background-color: black;
+}
+
+footer * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer p {
+    color: white;
+}
+
+.stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    #rnd-fact-text {
+        width: 100%;
+    }
+    
+    .star-image {
+        display: none;
+    }
+
+    .horizontal-flex {
+        display: block;
+    }
+
+    .horizontal-flex div {
+        width: 100% !important;
+    }
+
+    html {
+        font-size: .65rem;
+    }
+
+    .tab {
+        display: block;
+    }
+
+    #info2-left-part-width, .tab-a {
+        width: 100%;
+    }
+    
+    .tab-a {
+        margin: 15px 0;
+        display: block;
+    }
+ }

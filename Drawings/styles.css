@@ -1,0 +1,206 @@
+body {
+    border: 4px dashed var(--background-color5);
+    min-height: 100vh;
+    background-color: var(--background-color2);
+    background-image: 
+    linear-gradient(var(--background-color3) 1px, transparent 1px),
+    linear-gradient(90deg, var(--background-color3) 1px, transparent 1px);
+    background-size: 30px 30px;
+    /*
+    background: linear-gradient(0deg, var(--background-color2), var(--background-color3));
+    background-position: 0% 0%;
+    background-size: 150% 150%;
+    animation: gradient-rotation 3s ease-in-out infinite alternate;*/
+}
+
+h1 {
+    text-align: center;
+    margin: 30vh 0;
+    padding: 40px;
+    font-size: 5rem;
+}
+
+#drawings-amount, h1 {
+    color: #7020f0;
+    font-weight: 100;
+    font-family: Brush Script MT, Coronetscript, Arial, Helvetica, sans-serif;
+}
+
+#drawings-container {
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+    width: 90%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    background-color: var(--background-color5lowopc);
+    border: dotted 10px var(--background-color5lowopc)
+}
+
+.image-box {
+    background-size: 150% 150%;
+    background-position: 0% 0%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: dotted 5px var(--background-color2);
+    background: linear-gradient(45deg, var(--background-color2), var(--background-color3));
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 20px var(--background-color5lowopc);
+
+    transition: background-position 0.5s ease, 
+                background-size 0.5s ease, 
+                border 0.5s ease;
+}
+
+.image-box:hover {
+    cursor: pointer;
+    background-size: 200% 200%;
+    background-position: 100% 100%;
+    border: dotted 5px var(--background-color3);
+}
+
+.drawing {
+    width: 390px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.drawing-name, .drawing-time {
+    display: block;
+    margin: 10px 0px;
+    text-align: left;
+    color: white;
+    text-shadow: white 0 0 5px;
+}
+
+.drawing-name {
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.drawing-time {
+    font-size: 2.5rem;
+    text-align: right;
+}
+
+#static-image-container {
+    top: -1px;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
+#static-image-container * {
+    position: absolute;
+}
+
+#static-image-bg-lowopc {
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: .5
+}
+
+#static-image {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80vh;
+}
+
+#close-static-image-container {
+    top: 0px;
+    right: 55px;
+    width: 100px;
+    height: 100px;
+    color: white;
+    font-size: 50px;
+    text-shadow: white 0 0 5px;
+    background-color: transparent;
+    border: none;
+}
+
+#close-static-image-container:hover {
+    cursor: pointer;
+    color:var(--background-color3);
+    text-shadow: var(--background-color3) 0 0 5px;
+}
+
+#close-static-image-container:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    #static-image {
+        height: auto;
+        width: 90%;
+    }
+
+    .drawing {
+        width: 100%;
+    }
+
+    html {
+        font-size: .6rem;
+    }
+}
+
+#total-time, #total-time span {
+    color: #7020f0;
+    font-weight: 100;
+    font-family: Brush Script MT, Coronetscript, Arial, Helvetica, sans-serif;
+
+    font-size: 4rem;
+    margin: 10px auto;
+    text-align: center;
+}
+
+#total-time {
+    margin-bottom: 5vh;
+}
+
+#total-time span {
+    font-size: .4rem
+}
+
+#get-back {
+    background-size: 150% 150%;
+    background-position: 0% 0%;
+    font-weight: 1000;
+    position: fixed;
+    top: -4px;
+    left: -4px;
+    background: linear-gradient(20deg, var(--background-color1lowopc), var(--background-color2));
+    border-bottom-right-radius: 10px;
+    padding: 10px 20px;
+    font-size: 2rem;
+    text-shadow: 0 0 10px white;
+    color: white;
+    border: none;
+    text-decoration: none;
+    transition: transform 0.3s ease, border-bottom 0.3s ease, text-shadow 0.5s ease;
+    border-bottom: 3px solid var(--background-color5);
+}
+
+#get-back:hover {
+    cursor: pointer;
+    text-shadow: 0 0 5px white;
+    border-bottom: 5px solid var(--background-color5);
+}
+
+#get-back:focus {
+    outline: none;
+}
+
+.button--hidden {
+    transform: translateY(-100%);
+}
