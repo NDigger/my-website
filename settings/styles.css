@@ -1,0 +1,115 @@
+body {
+    background-color: gray;
+}
+
+main {
+    width: min(800px, 100%);
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: calc(var(--header-height) + 20px);
+    background-color: white;
+    min-height: calc(100vh - 40px - var(--header-height));
+}
+
+main * {
+    font-family: initial;
+}
+
+main h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main label {
+    position: relative;
+    display: block;
+    font-size: 1.5rem;
+    margin: 20px 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+main label:hover {
+    background-color: #e4f9ff;
+}
+
+label input[type="checkbox"], .color-palette-button {
+    position: absolute;
+    text-align: right;
+    top: calc(50% - 10px);
+    right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.description {
+    color: gray;
+    font-size: 1rem;
+}
+
+#save {
+    background-color: greenyellow;
+    display: block;
+    border: none;
+    font-size: 2rem;
+    padding: 5px 30px;
+    border-radius: 30px;
+    color: black;
+    margin: 20px auto;
+}
+
+#save:disabled {
+    background-color: whitesmoke;
+}
+
+#save:not(:disabled):hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+
+#save:not(:disabled):active {
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+#save:disabled:hover {
+    cursor: not-allowed;
+}
+
+.color-palette-button {
+    padding: 0;
+    width: 150px;
+    border: none
+}
+
+.color-palette-button:hover {
+    cursor: pointer;
+}
+
+.color-palette-button span {
+    width: 25%;
+    height: 100%;
+    pointer-events: none;
+    display: inline-block;
+}
+
+.color-palette-button span:nth-child(1) {
+    background: linear-gradient(to right, var(--background-color1), var(--background-color2));
+}
+.color-palette-button span:nth-child(2) {
+    background: linear-gradient(to right, var(--background-color2), var(--background-color3));
+}
+.color-palette-button span:nth-child(3) {
+    background: linear-gradient(to right, var(--background-color3), var(--background-color4));
+}
+.color-palette-button span:nth-child(4) {
+    background: linear-gradient(to right, var(--background-color4), var(--background-color5));
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-top: var(--header-height);
+        min-height: calc(100vh - var(--header-height));
+    }
+}

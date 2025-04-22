@@ -1,5 +1,4 @@
 body {
-    border: 4px dashed var(--background-color5);
     min-height: 100vh;
     background-color: var(--background-color2);
     background-image: 
@@ -13,6 +12,13 @@ body {
     animation: gradient-rotation 3s ease-in-out infinite alternate;*/
 }
 
+#border {
+    width: 100%;
+    height: 100%;
+    margin-top: var(--header-height);
+    border: 4px dashed var(--background-color5);
+}
+
 h1 {
     text-align: center;
     margin: 30vh 0;
@@ -21,7 +27,7 @@ h1 {
 }
 
 #drawings-amount, h1 {
-    color: #7020f0;
+    color: var(--background-color3);
     font-weight: 100;
     font-family: Brush Script MT, Coronetscript, Arial, Helvetica, sans-serif;
 }
@@ -76,7 +82,7 @@ h1 {
     margin: 10px 0px;
     text-align: left;
     color: white;
-    text-shadow: white 0 0 5px;
+    text-shadow: var(--basic-text-glow);
 }
 
 .drawing-name {
@@ -96,6 +102,7 @@ h1 {
     width: 100vw;
     height: 100vh;
     position: fixed;
+    z-index: 2;
 }
 
 #static-image-container * {
@@ -124,7 +131,7 @@ h1 {
     height: 100px;
     color: white;
     font-size: 50px;
-    text-shadow: white 0 0 5px;
+    text-shadow: var(--basic-text-glow);
     background-color: transparent;
     border: none;
 }
@@ -155,7 +162,7 @@ h1 {
 }
 
 #total-time, #total-time span {
-    color: #7020f0;
+    color: var(--background-color3);
     font-weight: 100;
     font-family: Brush Script MT, Coronetscript, Arial, Helvetica, sans-serif;
 
@@ -170,37 +177,4 @@ h1 {
 
 #total-time span {
     font-size: 4rem
-}
-
-#get-back {
-    background-size: 150% 150%;
-    background-position: 0% 0%;
-    font-weight: 1000;
-    position: fixed;
-    top: -4px;
-    left: -4px;
-    background: linear-gradient(20deg, var(--background-color1lowopc), var(--background-color2));
-    border-bottom-right-radius: 10px;
-    padding: 10px 20px;
-    font-size: 2rem;
-    text-shadow: 0 0 10px white;
-    color: white;
-    border: none;
-    text-decoration: none;
-    transition: transform 0.3s ease, border-bottom 0.3s ease, text-shadow 0.5s ease;
-    border-bottom: 3px solid var(--background-color5);
-}
-
-#get-back:hover {
-    cursor: pointer;
-    text-shadow: 0 0 5px white;
-    border-bottom: 5px solid var(--background-color5);
-}
-
-#get-back:focus {
-    outline: none;
-}
-
-.button--hidden {
-    transform: translateY(-100%);
 }

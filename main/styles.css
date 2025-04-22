@@ -1,6 +1,6 @@
 .cloud {
-    width: 60vh;
-    height: 60vh;
+    width: min(60vh, 80vw);
+    height: min(60vh, 80vw);
     position: absolute;
     background: radial-gradient(circle, white 40%, transparent 50%);
     animation: resizeWidth 3s ease-in-out infinite alternate;
@@ -8,13 +8,13 @@
 }
 
 .big-cloud {
-    width: 75vh;
-    height: 75vh;
+    width: min(75vh, 95vw);
+    height: min(75vh, 95vw);
 }
 
 .cloud:nth-child(1) { top: -20vh; left: 90vw}
 .cloud:nth-child(2) { top: -25vh; left: 10vw}
-.cloud:nth-child(3) { top: -20vh; left: -5vw}
+.cloud:nth-child(3) { top: -20vh; left: -15vw}
 .cloud:nth-child(4) { top: -45vh; left: 10vw}
 .cloud:nth-child(5) { top: -23vh; left: 80vw}
 .cloud:nth-child(6) { top: -39vh; left: 25vw}
@@ -26,6 +26,7 @@
 .cloud:nth-child(12) { top: -23vh; left: 80vw}
 .cloud:nth-child(13) { top: 33vh; right: 91vw}
 .cloud:nth-child(14) { top: -33vh; left: -45vh}
+.cloud:nth-child(15) { top: -40vh; left: -5vw}
 
 .star-image {
     position: absolute;
@@ -49,15 +50,6 @@
     }
 }
 
-.star-container {
-    height: 100px;
-}
-
-.star {
-    position: absolute;
-    background: radial-gradient(circle, white 0%, transparent 50%);
-}
-
 main {
     background: linear-gradient(var(--background-color1), var(--background-color2));
     display: flex;
@@ -74,53 +66,56 @@ main * {
 }
 
 main h1, main h2, main h3 {
-    text-shadow: 0 0 5px white;
+    width: 90%;
+    text-shadow: var(--basic-text-glow);
     text-align: center;
     animation: text-glow 1.5s ease-in-out infinite alternate;
 }
 
 #rnd-fact-text {
-    font-size: 1.9em;
-    width: 70%;
+    font-size: 1.9rem;
+    width: min(90%, 1000px);
+}
+
+#current-fact-day {
+    background: linear-gradient(var(--background-color3lowopc), var(--background-color2));
+    padding: 5px 10px;
+    border-radius: 40px;
+    font-family: Consolas, Arial, Helvetica, sans-serif;
 }
 
 @keyframes text-glow {
     0% {
-        text-shadow: 0 0 5px white;
+        text-shadow: var(--basic-text-glow);
     } 
     100% {
-        text-shadow: 0 0 10px white;
+        text-shadow: var(--big-text-glow);
     }
 }
 
 main h1 {
-    font-size: 5em;
+    font-size: 5rem;
 }
 
 main h2 {
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 main h3 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     position: relative;
     top: 10vh;
     margin: 0px 0;
 }
 
-.star {
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-}
-
 #info {
     background: linear-gradient(var(--background-color2), var(--background-color3));
     width: 100vw;
+    padding-top: 30vh;
 }
 
-#info h1, #info h2, #info p {
-    text-shadow: 0 0 5px white;
+#title-about-me, #info p {
+    text-shadow: var(--basic-text-glow);
 }
 
 #info span {
@@ -128,81 +123,72 @@ main h3 {
     font-family: "Bahnschrift SemiBold", sans-serif;
 }
 
-#info h1 {
-    font-size: 5em;
+#title-about-me {
+    white-space: pre;
+    font-size: 4rem;
     display: inline-block;
-    width: auto;
-    margin-top: 20vh;
     margin-left: 5vw;
-    padding: 30px;
-}
-
-#info h2 {
+    padding: 10px 0;
+    padding-left: 1vw;
     position: relative;
-    box-shadow: var(--background-color2) 3px 5px 10px;
-    text-align: right;
-    top: 0px;
-    left: 600px;
-    background: linear-gradient(-10deg, var(--background-color3lowopc), rgba(202, 10, 55, .3));
-    background-size: 150% 150%;
-    background-position: 0% 0%;
-    transform: rotate3d(1, -0.5, 0, 35deg);
-    border-radius: 10px;
-    font-size: 1.5em;
-    display: inline-block;
-    width: auto;
-    color: var(--font-color2);
-    padding: 5px;
-    margin-left: 10vw;
-    animation: backgroundEffect 1s ease-in-out infinite alternate;
+    text-align: center;
+    left: -20vw;
+    width: 120vw;
 }
 
+.half-width-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 #info p, #info p span {
     padding: 20px;
-    font-size: 2em;
+    font-size: 2rem;
     display: block;
-    width: 85%;
-    margin-left: 7vw;
+    width: 92%;
 }
 
 #info p span {
     display: block;
     width: 100%;
-    font-size: 1em;
+    font-size: 0.8em;
     color: var(--background-color2);
-    margin: 0;
+    margin: 0px;
     margin-top: 15px;
     text-align: right;
     border-radius: 5px;
 }
 
 #info p, #info h1 {
-    border-radius: 20px;
+    border-radius: 4px;
     transform: rotate3d(1, -0.5, 0, 35deg);
     background: linear-gradient(-10deg, var(--background-color3lowopc), rgba(202, 10, 55, .3));
     background-size: 150% 150%;
-    box-shadow: var(--background-color2) 6px 10px 10px;
-    color: var(--font-color2);;
+    box-shadow: var(--background-color3) 6px 10px 5px;
+    color: var(--font-color2);
     animation: background-effect 2s ease-in-out infinite alternate;
 }
 
 @keyframes background-effect {
     0% {
         background-position: 0% 0%;
-        transform: rotate3d(1, -0.5, 0, 35deg);
+        transform: rotate3d(1, -0.2, 0, 35deg);
     }
     100% {
         background-position: 100% 100%;
-        transform: rotate3d(1, -0.45, 0, 35deg);
+        transform: rotate3d(1, -0.15, 0, 35deg);
     }
 }
 
 .horizontal-flex {
     display: flex;
+    align-items: flex-start;
 }
 
-#info2 {
+#links {
     background: linear-gradient(var(--background-color3), var(--background-color4));
     width: 100vw;
     padding: 10vh 0;
@@ -217,22 +203,23 @@ main h3 {
     background-size: 150% 150%;
     background-position: 0% 0%;
 
-    text-shadow: 0 0 5px white;
+    text-shadow: var(--basic-text-glow);
     color: white;
-    background: linear-gradient(10deg, var(--background-color4), var(--background-color5));
+    background: linear-gradient(10deg, var(--background-color3), var(--background-color4));
     padding: 30px;
     width: 80vw;
-    box-shadow: var(--background-color5) 6px 10px 10px;
+
+    border: 3px solid black;
 }
 
-.info2-left-part-width {
+.links-left-part-width {
     width: 80%;
 }
 
-.tab-a {
+.tab-anchor {
     width: 20%;
     max-height: 20vh;
-    font-size: 3em;
+    font-size: 3rem;
     margin: auto 0;
     background-color: white;
     text-align: center;
@@ -243,17 +230,30 @@ main h3 {
     box-shadow: 0 0 10px white;
 }
 
-.tab-a:hover {
-    background-color: var(--background-color1lowopc);
-    box-shadow: 0 0 10px var(--background-color1lowopc);
+.tab-anchor:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+    color: white;
     cursor: pointer;
 }
 
-.tab:nth-child(1) {
+.tab:nth-child(odd) {
     animation: tab-effect 3s ease-in-out infinite alternate;
+    box-shadow: rgba(0, 0, 0, 0.7) 6px 10px 10px;
 }
-.tab:nth-child(2) {
+
+.tab:nth-child(even) {
     animation: tab-effect2 3s ease-in-out infinite alternate;
+    box-shadow: rgba(0, 0, 0, 0.7) -6px 10px 10px;
+}
+
+.tab:nth-child(3) {
+    background: linear-gradient(10deg, #202020, #404040);
+    box-shadow: black 6px 10px 10px;
+}
+
+.tab:nth-child(3) h1, .tab:nth-child(3) p {
+    font-family: var(--discussions-font);
 }
 
 @keyframes tab-effect {
@@ -263,7 +263,7 @@ main h3 {
     }
     100% {
         background-position: 100% 100%;
-        transform: rotate3d(1, -0.35, .1, 35deg);
+        transform: rotate3d(.7, -0.32, .1, 35deg);
     }
 }
 
@@ -274,17 +274,17 @@ main h3 {
     }
     100% {
         background-position: 100% 100%;
-        transform: rotate3d(.7, 0.35, -.1, 35deg);
+        transform: rotate3d(.7, 0.32, -.1, 35deg);
     }
 }
 
 .tab h1 {
-    font-size: 5em;
+    font-size: 5rem;
     margin-bottom: 20px;
 }
 
 .tab p {
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 #page-bottom {
@@ -299,16 +299,18 @@ main h3 {
     justify-content: center;
     align-items: center;
 }
+
 #page-bottom h1, #page-bottom h2 {
     text-align: center;
+    width: 95%;
 }
 
 #page-bottom h1 {
-    font-size: 4em;
+    font-size: 4rem;
 }
 
 #page-bottom h2 {
-    font-size: 2em;
+    font-size: 2rem;
     opacity: 0.4;
 }
 
@@ -319,7 +321,7 @@ main h3 {
 }
 
 .social-media {
-    font-size: 1.6em;
+    font-size: 1.6rem;
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
     margin: 5px;
@@ -384,28 +386,12 @@ footer {
     background-color: black;
 }
 
-footer * {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 footer p {
     color: white;
 }
 
-.stars-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    overflow: hidden;
-}
-
 @media (max-width: 768px) {
-    #rnd-fact-text {
-        width: 100%;
-    }
-    
-    .star-image {
+    .star-image, .about-me-stars {
         display: none;
     }
 
@@ -418,18 +404,18 @@ footer p {
     }
 
     html {
-        font-size: .65rem;
+        font-size: 0.8rem;
     }
 
     .tab {
         display: block;
     }
 
-    #info2-left-part-width, .tab-a {
+    #links-left-part-width, .tab-anchor {
         width: 100%;
     }
     
-    .tab-a {
+    .tab-anchor {
         margin: 15px 0;
         display: block;
     }

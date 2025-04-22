@@ -1,4 +1,10 @@
-const cloudsContainer = document.getElementById("clouds-container")
+const cloudsContainer = document.createElement("div");
+cloudsContainer.id = "clouds-container";
+cloudsContainer.overflow = "hidden";
+document.querySelector("body").appendChild(cloudsContainer);
+const settings = JSON.parse(localStorage.getItem("settings"))
+
+let cloudSpawnInterval = 1000;
 
 class Vector2 {
     constructor(x, y) {
@@ -14,15 +20,13 @@ class Vector2 {
     }
 }
 
-function rand_range(min, max) {
-    return Math.random() * (max - min) + min;
-}
+const rand_range = (min, max) => Math.random() * (max - min) + min;
 
 class Star {
     constructor() {
         const rndSize = rand_range(60, 220); 
         this.size = new Vector2(rndSize, rndSize);
-        this.position = new Vector2(rand_range(-90, 10), rand_range(-15, 55));
+        this.position = new Vector2(rand_range(-100, 0), rand_range(-1000, document.body.scrollHeight - 1600));
         this.move = new Vector2(rand_range(0.05, 0.4), 0) //new Vector2(rand_range(-.05, .05), rand_range(-.05, .05));
         this.alpha = 0;
         const randColor = () => rand_range(255, 255)
@@ -33,7 +37,7 @@ class Star {
         }
 
         this.object = document.createElement("div");
-        this.object.classList.add("star");
+        this.object.classList.add("cloud");
         cloudsContainer.appendChild(this.object);
         this.update();
         this.appearance();
@@ -42,7 +46,7 @@ class Star {
     appearance = async () => {
         const targetA = rand_range(.2, .9);
         for (let i = 0; i < 100; i++) {
-            this.alpha += targetA / 140;
+            this.alpha += targetA / 150;
             await new Promise(resolve => setTimeout(resolve, 10));
         }
         this.disappearance();
@@ -59,7 +63,7 @@ class Star {
 
     update() {
         this.position = this.position.add(this.move)
-        this.object.style.top = `${this.position.y}%`;
+        this.object.style.top = `${this.position.y}px`;
         this.object.style.left = `${this.position.x}vw`;
         this.object.style.width = `${this.size.x}vw`;
         this.object.style.height = `${this.size.y}vh`;
@@ -74,14 +78,17 @@ class Star {
     }
 }
 
+const cloudsAllowed = settings?.cloudsEnabled ?? true;
+console.log(cloudsAllowed)
+
 setInterval(() => {
-    if (!isActive) { return }
+    if (!isActive || !cloudsAllowed) { return }
     let spawn = Math.floor(Math.random() * 6 + 1)
     while (spawn > 0) {
         new Star();
         spawn--;
     }
-}, 2000);
+}, cloudSpawnInterval);
 
 let isActive = true;
 document.addEventListener("visibilitychange", () => {

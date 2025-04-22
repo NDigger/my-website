@@ -5,8 +5,12 @@
     box-sizing: border-box;
 }
 
+*:focus {
+    outline: none;
+}
+
 * {
-    font-family: "Ink Free", cursive;
+    font-family: "Ink Free", cursive, Arial, Helvetica, sans-serif; /* Century Gothic, Ink Free */
     scroll-behavior: smooth;
 }
 
@@ -18,21 +22,6 @@
 
 *::selection {
     background-color: var(--selection-color);
-}
-
-:root {
-    --background-color1: rgb(52, 202, 223);
-    --background-color2: rgb(202, 106, 223);
-    --background-color3: rgb(154, 10, 223);
-    --background-color4: rgb(124, 0, 243);
-    --background-color5: rgb(64, 0, 103);
-    --background-color1lowopc: rgba(202, 202, 223, 0.3);
-    --background-color2lowopc: rgba(202, 106, 223, 0.3);
-    --background-color3lowopc: rgba(154, 10, 223, 0.3);
-    --background-color4lowopc: rgb(124, 0, 243, 0.3);
-    --background-color5lowopc: rgb(64, 0, 103, 0.3);
-    --font-color2: rgb(250, 230, 255);
-    --selection-color: rgba(255, 255, 255, 0.2);
 }
 
 html, body {
@@ -81,3 +70,92 @@ body {
         background-position: 100% 100%;
     }
 }
+
+.cloud {
+    pointer-events: none;
+}
+
+:root {
+    --background-color1: rgb(52, 202, 223);
+    --background-color2: rgb(202, 106, 223);
+    --background-color3: rgb(154, 10, 223);
+    --background-color4: rgb(124, 0, 243);
+    --background-color5: rgb(64, 0, 103);
+    --background-color1midopc: rgba(52, 202, 223, .7);
+    --background-color2midopc: rgba(202, 106, 223, .7);
+    --background-color3midopc: rgba(154, 10, 223, .7);
+    --background-color4midopc: rgba(124, 0, 243, .7);
+    --background-color5midopc: rgba(64, 0, 103, .7);
+    --background-color1lowopc: rgba(52, 202, 223, 0.3);
+    --background-color2lowopc: rgba(202, 106, 223, 0.3);
+    --background-color3lowopc: rgba(154, 10, 223, 0.3);
+    --background-color4lowopc: rgb(124, 0, 243, 0.3);
+    --background-color5lowopc: rgb(64, 0, 103, 0.3);
+    --font-color2: rgb(250, 230, 255);
+    --selection-color: rgba(255, 255, 255, 0.2);
+
+    --basic-text-glow: 0 0 5px white;
+    --big-text-glow: 0 0 5px white;
+    --discussions-font: Arial, Helvetica, sans-serif;
+}
+
+body.orange {
+    --background-color1: rgb(240, 210, 50);
+    --background-color2: rgb(240, 120, 40);
+    --background-color3: rgb(200, 70, 80);
+    --background-color4: rgb(160, 60, 180);
+    --background-color5: rgb(100, 50, 130);
+
+    --background-color1midopc: rgba(240, 210, 50, 0.7);
+    --background-color2midopc: rgba(240, 120, 40, 0.7);
+    --background-color3midopc: rgba(200, 70, 80, 0.7);
+    --background-color4midopc: rgba(160, 60, 180, 0.7);
+    --background-color5midopc: rgba(100, 50, 130, 0.7);
+
+    --background-color1lowopc: rgba(240, 210, 50, 0.3);
+    --background-color2lowopc: rgba(240, 120, 40, 0.3);
+    --background-color3lowopc: rgba(200, 70, 80, 0.3);
+    --background-color4lowopc: rgba(160, 60, 180, 0.3);
+    --background-color5lowopc: rgba(100, 50, 130, 0.3);
+}
+
+body.space {
+    --background-color1: rgb(87, 32, 176);
+    --background-color2: rgb(75, 30, 255);
+    --background-color3: rgb(0, 106, 255);
+    --background-color4: rgb(0, 89, 131);
+    --background-color5: rgb(0, 39, 38); 
+
+    --background-color1midopc: rgba(85, 40, 160, 0.7);
+    --background-color2midopc: rgba(30, 75, 255, 0.7);
+    --background-color3midopc: rgba(210, 100, 255, 0.7);
+    --background-color4midopc: rgba(120, 180, 255, 0.7);
+    --background-color5midopc: rgba(180, 50, 230, 0.7);
+
+    --background-color1lowopc: rgba(85, 40, 160, 0.3);
+    --background-color2lowopc: rgba(30, 75, 255, 0.3);
+    --background-color3lowopc: rgba(210, 100, 255, 0.3);
+    --background-color4lowopc: rgba(120, 180, 255, 0.3);
+    --background-color5lowopc: rgba(180, 50, 230, 0.3);
+}
+
+body.redblack {
+    --background-color1: rgb(200, 30, 30);
+    --background-color2: rgb(150, 20, 40);
+    --background-color3: rgb(90, 15, 25);
+    --background-color4: rgb(50, 10, 20);
+    --background-color5: rgb(30, 5, 15);
+
+    --background-color1midopc: rgba(200, 30, 30, 0.7);
+    --background-color2midopc: rgba(150, 20, 40, 0.7);
+    --background-color3midopc: rgba(90, 15, 25, 0.7);
+    --background-color4midopc: rgba(50, 10, 20, 0.7);
+    --background-color5midopc: rgba(30, 5, 15, 0.7);
+
+    --background-color1lowopc: rgba(200, 30, 30, 0.3);
+    --background-color2lowopc: rgba(150, 20, 40, 0.3);
+    --background-color3lowopc: rgba(90, 15, 25, 0.3);
+    --background-color4lowopc: rgba(50, 10, 20, 0.3);
+    --background-color5lowopc: rgba(30, 5, 15, 0.3);
+}
+

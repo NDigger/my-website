@@ -1,0 +1,193 @@
+body {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(var(--background-color1midopc), var(--background-color5midopc));
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    overflow: hidden;
+}
+
+body::before, body::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 150px);
+    inset: 0;
+    pointer-events: none;
+}
+
+body.animated::before, body.animated::after {
+    animation: bgMovement 18s infinite;
+}
+
+@keyframes bgMovement {
+    0% {
+        top: 0px;
+        left: -150px;
+    } 100% {
+        top: -150px;
+        left: 0px;
+    }
+}
+
+body::before {
+    z-index: -3;
+    background: 
+    linear-gradient(45deg,rgba(0, 1, 1, 0.03) 50%, rgba(0, 0, 0, 0.0) 50%),
+    linear-gradient(-45deg,rgba(0, 1, 1, 0.05) 40%, rgba(0, 0, 0, 0.0) 50%);
+    background-size: 150px 150px;
+}
+
+body::after {
+    background: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: -2;
+}
+
+fieldset {
+    position: relative;
+    font-size: 1.2rem;
+    margin: 100px auto;
+    border-radius: 10px;
+    width: min(1000px, 95%);
+    background: linear-gradient(var(--background-color1midopc), var(--background-color3midopc));
+    color: white
+}
+
+fieldset * {
+    font-family: var(--discussions-font);
+}
+
+fieldset legend {
+    background: linear-gradient(var(--background-color2midopc), var(--background-color3midopc));
+    border: 2px solid white;
+    transform: rotate(2deg);
+    padding: 10px;
+    margin-right: -10px;
+    font-size: 4rem;
+    text-align: right;
+    border-radius: 10px;
+}
+
+fieldset h1 {
+    margin-top: -40px;
+}
+
+fieldset h2, fieldset h3 {
+    margin-top: 20px;
+}
+
+fieldset h2::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: white;
+}
+
+fieldset iframe {
+    width: 100%;
+    height: 400px;
+}
+
+fieldset p {
+    margin: 10px 0;
+}
+
+fieldset a {
+    color: white;
+}
+
+.show-hover {
+    background-color: white;
+}
+
+.show-hover:hover {
+    background: none;
+    cursor: help;
+}
+
+.rating {
+    display: inline-block;
+    text-align: center;
+    max-width: 50px;
+    width: 50px;
+    background-color: black;
+    font-family: Rajdhani, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.rating::after {
+    content: "/5";
+    font-size: 0.6em;
+}
+
+.ratings-list * {
+    margin: 5px 0;
+    display: inline-block;
+    width: min(50%, 300px);
+}
+
+.shiny {
+    position: relative;
+}
+
+.shiny::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(255, 255, 255, .6) 50%,
+      transparent 100%
+    );
+    transform: skewX(-20deg);
+    animation: shine 2s infinite;
+}
+  
+@keyframes shine {
+    0% {
+      left: 5%;
+    }
+    50% {
+      left: 10%;
+    }
+    100% {
+      left: 5%;
+    }
+}
+
+.additional-picture {
+    float: right;
+    width: 400px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.gallery {
+    margin: 10px auto;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.gallery * {
+    max-width: 48%;
+}
+
+@media (max-width: 768px) {
+    .additional-picture {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .gallery * {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="stylesheet" href="/base.css">
+    <link rel="stylesheet" href="/features/header.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Settings</title>
+</head>
+<body>
+    <main>
+        <h1>Settings</h1>
+        <label for="clouds">
+            Clouds
+            <input id="clouds" type="checkbox" checked>
+            <p class="description">Adds moving clouds on some pages. May cause bad performance.</p>
+        </label>
+        <label for="animations">
+            Animations
+            <input id="animations" type="checkbox" checked>
+            <p class="description">Adds dynamic animations to elements.</p>
+        </label>
+        <label for="color-palette-button">
+            Color Palette
+            <button id="color-palette-button" class="color-palette-button" ><span class="color-palette"></span><span class="color-palette"></span><span class="color-palette"></span><span class="color-palette"></span><span class="color-palette"></span></button>
+            <p class="description">Color palette that is used on entire website.</p>
+        </label>
+        <button id="save" disabled>Save</button>
+    </main>
+    <script src="script.js"  type="module"></script>
+    <script src="/features/header.js"></script>
+    <script src="/features/globalAdjustments.js" type="module"></script>
+</body>
+</html>

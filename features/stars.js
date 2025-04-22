@@ -1,17 +1,20 @@
-const starsContainer = document.getElementById("stars-container")
+const starsContainer = document.createElement("div");
+starsContainer.id = "stars-container";
+document.querySelector("body").appendChild(starsContainer);
+
+const rand_range = (min, max) => Math.random() * (max - min) + min;
+
 const starData = []
 
 const spawnStar = () => {
     const star = document.createElement("div");
     star.classList = "star";
     const top = rand_range(0, 20);
-    const left = rand_range(0, 95);
+    const left = rand_range(0, 90);
     star.style.top = `${top}%`;
     star.style.left = `${left}vw`;
     const multiplier = Math.random() * 2 + 1;
-    star.style.width = `${multiplier * 10}%`;
-    star.style.height = `${multiplier * 10}px`;
-    starData.push({star: star, top: top, size: multiplier, multiplier: multiplier});
+    starData.push({star: star, top: top, size: multiplier * rand_range(0, 3), multiplier: multiplier});
     starsContainer.appendChild(star);
 }
 

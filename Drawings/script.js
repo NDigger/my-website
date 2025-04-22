@@ -7,7 +7,6 @@ const staticImageContainer = document.getElementById("static-image-container");
 const totalTime = document.getElementById("total-time");
 const html = document.querySelector("html");
 const drawingsAmount = document.getElementById("drawings-amount");
-const getBack = document.getElementById("get-back");
 const reversedDrawings = drawings.reverse()
 
 let totalTimeSpent = {
@@ -108,14 +107,4 @@ window.addEventListener('scroll', () => {
     if (scrollTop + windowHeight >= documentHeight) {
         createDrawingsTabs(drawings, showDrawings);
     }
-});
-
-// BUTTON ON SCROLL
-window.addEventListener('scroll', () => {
-if (window.scrollY > lastScrollY) {
-    getBack.classList.add('button--hidden'); // Scroll Down
-} else {
-    getBack.classList.remove('button--hidden'); // Scroll Up
-}
-lastScrollY = window.scrollY;
 });
