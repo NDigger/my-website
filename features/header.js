@@ -1,7 +1,7 @@
 const HTML = `
 <header>
     <div id="left-header-refs">
-        <a href="/main/index.html">Main Page</a>
+        <a href="/index.html">Main Page</a>
     </div>
     <div id="right-header-links">
         <button id="menu-btn">Menu
