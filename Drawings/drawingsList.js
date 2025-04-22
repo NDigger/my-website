@@ -156,12 +156,15 @@ export const drawings = [
     { path: "Drawings/Без названия407-1.jpg", time: "3 54" },
     { path: "Drawings/Без названия416.jpg", time: "4 25" },
     { path: "Drawings/Без названия417-1.jpg", time: "52" },
-    { path: "Drawings/Без названия428.jpg", time: "3 28"},
+    { path: "Drawings/Без названия428.jpg", time: "3 28" },
     { path: "Drawings/Без названия435-1.jpg", time: "29" },
     { path: "Drawings/Без названия437.jpg", time: "18" },
     { path: "Drawings/Без названия438-1.jpg", time: "8" },
     { path: "Drawings/Без названия440-1.jpg", time: "15" },
     { path: "Drawings/Без названия447-1.jpg", time: "26" },
-    { path: "Drawings/Без названия459-3.jpg", time: "6 17"},
-    { path: "Drawings/Без названия466.jpg", time: "1 46"}
+    { path: "Drawings/Без названия459-3.jpg", time: "6 17" },
+    { path: "Drawings/Без названия466.jpg", time: "1 46" },
+    { path: "Drawings/Без названия467_20250416203247.png", time: "1 25" },
+    { path: "Drawings/Без названия468.png", time: "2 05"},
+    { path: "Drawings/Без названия472_20250421103223.png", time: "3 13" },
   ];

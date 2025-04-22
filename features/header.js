@@ -6,7 +6,7 @@ const HTML = `
     <div id="right-header-links">
         <button id="menu-btn">Menu
             <div id="menu-btn-popup" class="header-popup" style="display: none">
-                <a href="/main/index.html">Main Page</a>
+                <a href="/index.html">Main Page</a>
                 <a href="/discussions/index.html">Discussions</a>
                 <a href="/settings/index.html">Settings</a>
                 <p class="header-category">Links</p><hr>
