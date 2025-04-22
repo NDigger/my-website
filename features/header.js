@@ -1,7 +1,7 @@
 const HTML = `
 <header>
     <div id="left-header-refs">
-        <a href="/main/index.html">Main Page</a>
+        <a href="/index.html">Main Page</a>
     </div>
     <div id="right-header-links">
         <button id="menu-btn">Menu
@@ -10,7 +10,7 @@ const HTML = `
                 <a href="/discussions/index.html">Discussions</a>
                 <a href="/settings/index.html">Settings</a>
                 <p class="header-category">Links</p><hr>
-                <a href="/drawings/index.html">My Drawings</a>
+                <a href="/Drawings/index.html">My Drawings</a>
                 <a href="https://ndagger1.itch.io/" target="_blank">My Games</a>
             </div>
         </button>
