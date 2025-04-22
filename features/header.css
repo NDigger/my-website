@@ -1,10 +1,10 @@
 :root {
-    --header-font-size: 1.3rem;
+    --header-font-size: 21px;
     --header-height: 40px;
 }
 
 header {
-    font-size: 1rem;
+    font-size: var(--header-font-size);
     position: fixed;
     z-index: 2;
     height: var(--header-height);
@@ -61,7 +61,7 @@ header * {
 }
 
 .header-category {
-    font-size: 1rem;
+    font-size: 1em;
     color: gray;
     text-align: left;
     margin-top: 8px;
@@ -90,6 +90,6 @@ header hr {
     }
 
     #menu-btn {
-        width: max(15vw, 35px);
+        width: 100px;
     }
 }

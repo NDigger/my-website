@@ -190,4 +190,16 @@ fieldset a {
     .gallery * {
         max-width: 100%;
     }
+
+    html {
+        font-size: 0.7rem;
+    }
+
+    .ratings-list {
+        padding: 0;
+    }
+
+    .ratings-list * {
+        width: 100%;
+    }
 }
