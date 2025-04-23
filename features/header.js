@@ -10,7 +10,7 @@ const HTML = `
                 <a href="/discussions/index.html">Discussions</a>
                 <a href="/settings/index.html">Settings</a>
                 <p class="header-category">Links</p><hr>
-                <a href="/Drawings/index.html">My Drawings</a>
+                <a href="/drawings/index.html">My Drawings</a>
                 <a href="https://ndagger1.itch.io/" target="_blank">My Games</a>
             </div>
         </button>
