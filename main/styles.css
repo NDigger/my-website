@@ -34,6 +34,13 @@
     left: 5vw;
 }
 
+#stars {
+    position: sticky;
+    height: 100px;
+    top: 100px;
+    background-color: red;
+}
+
 .star-image:first-of-type { top: 15vh; left: 90vw}
 
 @keyframes resizeWidth {

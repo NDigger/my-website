@@ -66,6 +66,14 @@ fieldset legend {
     border-radius: 10px;
 }
 
+fieldset:not(:first-of-type) {
+    background: var(--background-color3midopc);
+}
+
+fieldset legend:not(:first-of-type) {
+    background: var(--background-color3midopc);
+}
+
 fieldset h1 {
     margin-top: -40px;
 }
@@ -201,5 +209,13 @@ fieldset a {
 
     .ratings-list * {
         width: 100%;
+    }
+    
+    fieldset legend {
+        font-size: 2.5rem;
+    }
+
+    fieldset h1 {
+        margin-top: -20px;
     }
 }

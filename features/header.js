@@ -3,7 +3,7 @@ const HTML = `
     <div id="left-header-refs">
         <a href="/index.html">Main Page</a>
     </div>
-    <div id="right-header-links">
+    <nav id="right-header-links">
         <button id="menu-btn">Menu
             <div id="menu-btn-popup" class="header-popup" style="display: none">
                 <a href="/index.html">Main Page</a>
@@ -14,7 +14,7 @@ const HTML = `
                 <a href="https://ndagger1.itch.io/" target="_blank">My Games</a>
             </div>
         </button>
-    </div>
+    </nav>
 </header>
     `
 //<a href="/discussions/index.html">Discussions</a>

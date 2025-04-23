@@ -79,7 +79,6 @@ class Star {
 }
 
 const cloudsAllowed = settings?.cloudsEnabled ?? true;
-console.log(cloudsAllowed)
 
 setInterval(() => {
     if (!isActive || !cloudsAllowed) { return }
